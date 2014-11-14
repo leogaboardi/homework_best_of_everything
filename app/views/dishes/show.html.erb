@@ -1,12 +1,12 @@
 <div class="page-header">
-  <h1>Dish #<%= @dish.id %></h1>
+  <h1>Dish: <%= Dish.find(@dish.id).name %></h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt>Name</dt>
   <dd><%= @dish.name %></dd>
 
-  <dt>Cuisine ID</dt>
-  <dd><%= @dish.cuisine_id %></dd>
+  <dt>Cuisine</dt>
+  <dd><%= Cuisine.find(@dish.cuisine_id).name %></dd>
 
 </dl>
