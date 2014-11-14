@@ -16,6 +16,8 @@ class VenuesController < ApplicationController
 
     @latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
     @longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
+
+    @favorite = Favorite.where(:venue_id => @venue)
   end
 
   def new_form

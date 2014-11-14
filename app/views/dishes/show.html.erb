@@ -9,4 +9,17 @@
   <dt>Cuisine</dt>
   <dd><%= Cuisine.find(@dish.cuisine_id).name %></dd>
 
+  <dt>
+  <% if @favorites.count >= 1  %>
+  <%= "Favorites" %>
+  <% end  %>
+  </dt>
+  <dd>
+    <ul>
+
+      <% @favorites.each do |favs| %>
+      <li><%= Venue.find(favs.venue_id).name  %> - User: <%= User.find(favs.user_id).username  %></li>
+      <% end %>
+    </ul>
+  </dd>
 </dl>

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_favorite = Favorite.where(:user_id => @user)
   end
 
   def new

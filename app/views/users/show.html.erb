@@ -6,4 +6,12 @@
   <dt>Username</dt>
   <dd><%= @user.username %></dd>
 
+  <dt>Favorites</dt>
+  <dd>
+    <ul>
+    <% @user_favorite.each do |favs|  %>
+      <li><%= Dish.find(favs.dish_id).name %> - @<%= Venue.find(favs.venue_id).name %> </li>
+    <% end  %>
+    </ul>
+  </dd>
 </dl>

@@ -12,6 +12,19 @@
   <dt>Address</dt>
   <dd><%= @venue.address %></dd>
 
+  <dt>
+  <% if @favorite.count >= 1  %>
+  <%= "Favorites" %>
+  <% end  %>
+  </dt>
+  <dd>
+    <ul>
+    <% @favorite.each do |favs|  %>
+      <li><%= Dish.find(favs.user_id).name %> - User: <%= User.find(favs.user_id).username %></li>
+    <% end  %>
+    </ul>
+  </dd>
+
   <dt>Latitude</dt>
   <dd><%= @latitude %></dd>
 
